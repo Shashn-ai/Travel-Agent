@@ -1,46 +1,104 @@
-🌐 High-Level Workflow:
-User Input:
+🧳 Travel Agent AI
 
-The app asks for basic travel details like:
+Welcome to the Travel Agent AI — your smart travel companion! 🌍 This app helps you find flights, hotels, plan itineraries, get activity suggestions, and confirm bookings, all in one place.
 
-Departure and arrival airports
+📌 Features
 
-Travel dates (outbound and return)
+✈️ Flight Search: Find the best flights with just a few details.
 
-Number of adults and children
+🏨 Hotel Search: Get hotel recommendations tailored to your preferences.
 
-Destination city for hotels
+📅 Itinerary Planning: Create detailed itineraries for your trips.
 
-Preferences for activities
+🎉 Activity Suggestions: Discover fun activities at your destination.
 
-Travel Planning Steps:
-The app uses a LangGraph workflow to manage each step of the travel planning process. The graph looks like this:
+✅ Booking Confirmation: Get a summary of your bookings.
 
-Flight Search: Finds flights based on user inputs.
+🏗️ Tech Stack
 
-Hotel Search: Looks for hotels near the destination.
+Python 🐍
 
-Itinerary Planning: Creates a day-by-day plan of activities and travel.
+LangGraph for workflow orchestration
 
-Activity Suggestions: Recommends activities at the destination.
+Streamlit for the user interface
 
-Booking Confirmation: Final step to confirm bookings and show a summary of the trip.
+ChatGroq for LLM-powered responses
 
-AI Assistance:
+SerpAPI for fetching real-time travel data
 
-It uses ChatGroq LLM (Large Language Model) to help generate itinerary suggestions, activity ideas, and handle the conversation flow.
+⚙️ Setup Instructions
 
-SerpApi is used to fetch real-time flight and hotel data from Google Flights and Google Hotels.
+Clone the repository:
 
-User Interface:
+ git clone https://github.com/Shashn-ai/Travel-Agent.git
 
-Built with Streamlit to create a clean web interface for users to input their travel details and view results.
+Navigate into the project directory:
 
-Results for flights, hotels, and itineraries are displayed in the app.
+ cd Travel-Agent
 
-State Management:
+Create a virtual environment and activate it:
 
-The app maintains a state object to track the user’s journey through the planning process.
+ python -m venv venv
+ source venv/bin/activate  # For Linux/macOS
+ venv\Scripts\activate     # For Windows
 
-Each step updates the state, passing data (like flight and hotel results) to the next step.
+Install dependencies:
+
+ pip install -r requirements.txt
+
+Add your API keys:
+
+Create a .env file and add:
+
+GROQ_API_KEY=your_groq_api_key
+SERPAPI_KEY=your_serpapi_key
+
+Run the app:
+
+ streamlit run app.py
+
+📂 Project Structure
+
+Travel-Agent/
+├── src/
+│   ├── travel_agent/
+│   │   ├── graph/
+│   │   ├── node/
+│   │   ├── tools/
+│   │   ├── ui/
+│   │   └── state/
+│   └── app.py
+├── .env
+├── requirements.txt
+└── README.md
+
+📝 How to Use
+
+Enter your travel details in the app.
+
+Click through the steps: flight search → hotel search → itinerary planning → activity suggestions → booking confirmation.
+
+Review your trip summary and enjoy your travels! 🌟
+
+💬 Contributing
+
+Want to improve Travel Agent AI? Contributions are welcome!
+
+Fork the repository.
+
+Create a new branch:
+
+ git checkout -b feature/new-feature
+
+Commit your changes and push to your branch.
+
+Open a Pull Request.
+
+📧 Contact
+
+GitHub: Shashn-ai
+
+Email: your.email@example.com
+
+Happy Traveling! 🌍✨
 
