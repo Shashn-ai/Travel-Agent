@@ -1,6 +1,13 @@
 import streamlit as st
 from typing import List, Dict
 
+# Sidebar for API keys
+def get_api_keys():
+    with st.sidebar:
+        groq_api_key = st.text_input("Enter your GROQ API Key", type="password")
+        serpapi_key = st.text_input("Enter your SerpAPI Key", type="password")
+    return groq_api_key, serpapi_key
+
 def display_package_card(package: Dict, index: int):
     """Displays a travel package card with key details."""
     st.markdown(f"### {package.get('name', 'Package')} - ${package.get('price', 'N/A')}")

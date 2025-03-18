@@ -1,7 +1,7 @@
 from typing import Optional
 from pydantic import BaseModel, Field
 from langchain_core.tools import tool
-from serpapi import GoogleSearch  # Import GoogleSearch directly
+import serpapi # Import GoogleSearch directly
 from src.travel_agent.ui.streamlitui.loadui import load_streamlit_ui
 
 from dotenv import load_dotenv
@@ -46,7 +46,7 @@ def hotels_finder(params: HotelsInput):
     }
 
     try:
-        search = GoogleSearch(search_params)  # Correct usage
+        search = serpapi.search(search_params)  # Correct usage
         results = search.get_dict().get("hotels", [])
     except Exception as e:
         results = {"error": str(e)}

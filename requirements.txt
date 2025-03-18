@@ -4,5 +4,5 @@ langchain-openai
 langgraph
 grandalf
 streamlit
-Serpapi
+serpapi
 google-search-results

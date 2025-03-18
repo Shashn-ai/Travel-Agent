@@ -1,7 +1,7 @@
 from typing import Optional
 from pydantic import BaseModel, Field
 from langchain_core.tools import tool
-from serpapi import GoogleSearch  # Import GoogleSearch, not serpapi directly
+import serpapi # Import GoogleSearch, not serpapi directly
 import os
 from dotenv import load_dotenv
 
@@ -42,7 +42,7 @@ def flights_finder(params: FlightsInput):
     }
 
     try:
-        search = GoogleSearch(search_params)  # Correct usage
+        search = serpapi.search(search_params)  # Correct usage
         results = search.get_dict()
         return results.get('best_flights', [])
     except Exception as e:
