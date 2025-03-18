@@ -98,7 +98,7 @@ Open a Pull Request.
 
 GitHub: Shashn-ai
 
-Email: your.email@example.com
+Email: nshashi.223@gmail.com
 
 Happy Traveling! 🌍✨
 
